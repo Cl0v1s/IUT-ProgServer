@@ -16,7 +16,8 @@
   //include_once 'pages/index/suscribers.php'
 
   //Ecrire votre code ici
-
+  include_once "pages/index/base.php";
+  include_once "pages/error/base.php";
   ////////////////////////////////////////////////////////////////////////////////
 
 

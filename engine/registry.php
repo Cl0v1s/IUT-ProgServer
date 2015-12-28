@@ -90,7 +90,10 @@ class Registry
 
   public function getModel()
   {
+    if(isset($this->_model) == false)
+      return NULL;
     return $this->_model;
+
   }
 
   public static function CompressURL($url)

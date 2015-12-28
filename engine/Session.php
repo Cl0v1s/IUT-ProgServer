@@ -47,7 +47,11 @@ class Session
   {
     $hash = Session::getEntry("credentials");
     global $_system_registry;
+    if($_system_registry->getModel() == NULL)
+      return false;
+
     $users = $_system_registry->getModel()->query("SELECT id, name, password FROM users")->fetchall();
+
     for($i = 0; $i <count($users); $i++)
     {
       $h = md5(md5($users[$i]["name"]).$users[$i]["password"]);
