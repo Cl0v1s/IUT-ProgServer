@@ -35,7 +35,7 @@ class Session
   public static function checkAccount($user, $password)
   {
     global $_system_registry;
-    $credentials_valid = (count($_system_registry->getModel()->query("SELECT name, password FROM users WHERE name = '".$user."' AND password='".$password."'")->fetchall()) == 1);
+    $credentials_valid = (count($_system_registry->getModel()->query("SELECT Login, Password FROM Abonné WHERE Login = '".$user."' AND Password ='".$password."'")->fetchall()) == 1);
     if($credentials_valid == true)
     {
       Session::saveCredentials($user, $password);
@@ -50,7 +50,7 @@ class Session
     if($_system_registry->getModel() == NULL)
       return false;
 
-    $users = $_system_registry->getModel()->query("SELECT id, name, password FROM users")->fetchall();
+    $users = $_system_registry->getModel()->query("SELECT Code_Abonné, Login, Password FROM Abonné")->fetchall();
 
     for($i = 0; $i <count($users); $i++)
     {
@@ -64,7 +64,7 @@ class Session
   public static function checkCredentials($hash)
   {
     global $_system_registry;
-    $users = $_system_registry->getModel()->query("SELECT name, password FROM users")->fetchall();
+    $users = $_system_registry->getModel()->query("SELECT Login, Password FROM Abonné")->fetchall();
     for($i = 0; $i <count($users); $i++)
     {
       $h = md5(md5($users[$i][0]).$users[$i][1]);
