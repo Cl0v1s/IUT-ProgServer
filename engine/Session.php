@@ -80,6 +80,11 @@ class Session
     Session::addEntry("credentials", $hash);
   }
 
+  public static function saveCredentials($hash)
+  {
+    Session::addEntry("credentials", $hash);
+  }
+
 
 };
 ?>
