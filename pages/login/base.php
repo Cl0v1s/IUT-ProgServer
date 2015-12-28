@@ -1,8 +1,8 @@
 <?php
-    //PAGE D'ACCEUIL
+    //PAGE DE LOGIN
     $login = function($parameters)
     {
-        template("view/login/base.tpl", $parameters, "views/base.tpl");
+        template("views/login/base.tpl", $parameters, "views/base.tpl");
     };
-    $_system_registry->registerPage("index", "", $login);
+    $_system_registry->registerPage("login", "", $login);
 ?>
