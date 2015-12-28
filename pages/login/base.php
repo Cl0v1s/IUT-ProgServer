@@ -12,7 +12,7 @@
         if(Session::checkCredentials($parameters["hash"]))
         {
             $parameters["login"] = true;
-            Session::saveCredentials($parameters["hash"]);
+            Session::saveCredentialsHash($parameters["hash"]);
         }
         $parameters["login"] = false;
         template("views/login/base.tpl", $parameters, "views/base.tpl");
