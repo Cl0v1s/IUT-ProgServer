@@ -80,7 +80,7 @@ class Session
     Session::addEntry("credentials", $hash);
   }
 
-  public static function saveCredentials($hash)
+  public static function saveCredentialsHash($hash)
   {
     Session::addEntry("credentials", $hash);
   }
