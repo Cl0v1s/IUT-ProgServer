@@ -1,0 +1,38 @@
+/* line 3, base.scss */
+#search {
+  background-color: white;
+  width: 500px;
+  text-align: center;
+  line-height: 40px;
+  margin: auto;
+  padding-top: 80px;
+  margin-bottom: 100px;
+  border-radius: 2px; }
+  /* line 13, base.scss */
+  #search span {
+    color: #607d8b;
+    font-family: Arial, sans-serif; }
+  /* line 19, base.scss */
+  #search a.search {
+    width: 40px;
+    height: 40px; }
+
+/* line 26, base.scss */
+#about {
+  border-radius: 2px;
+  background-color: white;
+  display: block;
+  width: 500px;
+  margin: auto; }
+  /* line 34, base.scss */
+  #about h1 {
+    text-align: center; }
+  /* line 39, base.scss */
+  #about span {
+    display: block;
+    margin-top: 20px;
+    color: #607d8b;
+    font-family: Arial, sans-serif;
+    line-height: 23px; }
+
+/*# sourceMappingURL=base.css.map */
