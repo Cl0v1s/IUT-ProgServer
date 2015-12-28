@@ -1,0 +1,47 @@
+@import 'global';
+
+h1
+{
+  color: $color-base;
+  font-family: $font-base;
+  font-size: 30px;
+}
+
+
+form
+{
+  background-color: $color-base;
+  border-radius: 2px;
+  padding: 10px;
+
+  input[type=text],select
+  {
+    background-color: $color-contrast;
+    color: $color-background;
+    height: 20px;
+  }
+
+  input[type=text]::-webkit-input-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=text]::-moz-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=text]:-moz-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=text]:-ms-input-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+}

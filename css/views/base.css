@@ -1,4 +1,27 @@
 /* line 2, _buttons.scss */
+a {
+  text-decoration: none;
+  color: #22b3f5; }
+
+/* line 9, _buttons.scss */
+a.search {
+  display: inline-block;
+  background-image: url("./../../assets/icons/search.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  background-color: #607d8b;
+  border-radius: 2px;
+  border: transparent 1px solid; }
+
+/* line 24, _buttons.scss */
+a.search:hover {
+  border: #22b3f5 1px solid; }
+
+/* line 30, _buttons.scss */
 a.login {
   display: inline-block;
   background-image: url("./../../assets/icons/login.svg");
@@ -6,11 +29,51 @@ a.login {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 80px;
-  height: 80px; }
+  height: 80px;
+  border: transparent 1px solid; }
 
-/* line 13, _buttons.scss */
-a.login:hover {
-  opacity: 1; }
+/* line 48, _buttons.scss */
+input[type=text], select {
+  border: #607d8b 1px solid;
+  color: #607d8b;
+  font-family: Arial, sans-serif; }
+
+/* line 54, _buttons.scss */
+input[type=text]:hover, select:hover {
+  border: #22b3f5 1px solid; }
+
+/* line 3, _sections.scss */
+h1 {
+  color: #455a64;
+  font-family: Arial, sans-serif;
+  font-size: 30px; }
+
+/* line 11, _sections.scss */
+form {
+  background-color: #455a64;
+  border-radius: 2px;
+  padding: 10px; }
+  /* line 17, _sections.scss */
+  form input[type=text], form select {
+    background-color: #607d8b;
+    color: white;
+    height: 20px; }
+  /* line 24, _sections.scss */
+  form input[type=text]::-webkit-input-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 30, _sections.scss */
+  form input[type=text]::-moz-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 36, _sections.scss */
+  form input[type=text]:-moz-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 42, _sections.scss */
+  form input[type=text]:-ms-input-placeholder {
+    color: white;
+    opacity: 1; }
 
 /* line 4, base.scss */
 body {

@@ -1,3 +1,31 @@
+//Liens
+a
+{
+  text-decoration: none;
+  color: $color-link;
+}
+
+//Bouton de recherche
+a.search
+{
+  display: inline-block;
+  background-image: url("./../../assets/icons/search.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  background-color: $color-contrast;
+  border-radius: 2px;
+  border: rgba(0,0,0,0) 1px solid;
+}
+
+a.search:hover
+{
+  border: $color-link 1px solid;
+}
+
 //Bouton de login
 a.login
 {
@@ -8,9 +36,22 @@ a.login
   background-size: 100%;
   width: 80px;
   height: 80px;
+    border: rgba(0,0,0,0) 1px solid;
 }
 
 a.login:hover
 {
-  opacity: 1;
+
+}
+
+//Champs inputs
+input[type=text], select
+{
+  border: $color-contrast 1px solid;
+  color: $color-contrast;
+  font-family: $font-base;
+}
+input[type=text]:hover, select:hover
+{
+  border: $color-link 1px solid;
 }
