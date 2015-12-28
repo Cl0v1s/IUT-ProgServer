@@ -33,13 +33,13 @@ a.login {
   border: transparent 1px solid; }
 
 /* line 48, _buttons.scss */
-input[type=text], select {
+input[type=text], input[type=password], select {
   border: #607d8b 1px solid;
   color: #607d8b;
   font-family: Arial, sans-serif; }
 
 /* line 54, _buttons.scss */
-input[type=text]:hover, select:hover {
+input[type=text]:hover, input[type=password]:hover, select:hover {
   border: #22b3f5 1px solid; }
 
 /* line 3, _sections.scss */
@@ -54,7 +54,7 @@ form {
   border-radius: 2px;
   padding: 10px; }
   /* line 17, _sections.scss */
-  form input[type=text], form select {
+  form input[type=text], form input[type=password], form select {
     background-color: #607d8b;
     color: white;
     height: 20px; }
@@ -72,6 +72,22 @@ form {
     opacity: 1; }
   /* line 42, _sections.scss */
   form input[type=text]:-ms-input-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 48, _sections.scss */
+  form input[type=password]::-webkit-input-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 54, _sections.scss */
+  form input[type=password]::-moz-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 60, _sections.scss */
+  form input[type=password]:-moz-placeholder {
+    color: white;
+    opacity: 1; }
+  /* line 66, _sections.scss */
+  form input[type=password]:-ms-input-placeholder {
     color: white;
     opacity: 1; }
 

@@ -14,7 +14,7 @@ form
   border-radius: 2px;
   padding: 10px;
 
-  input[type=text],select
+  input[type=text],input[type=password],select
   {
     background-color: $color-contrast;
     color: $color-background;
@@ -40,6 +40,30 @@ form
   }
 
   input[type=text]:-ms-input-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=password]::-webkit-input-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=password]::-moz-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=password]:-moz-placeholder
+  {
+    color: $color-background;
+    opacity: 1;
+  }
+
+  input[type=password]:-ms-input-placeholder
   {
     color: $color-background;
     opacity: 1;

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta lang="fr">
 
+    <script type="text/javascript" src="js/libs/md5.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-2.1.4.min.js"></script>
     <!--Inclusion des pages css-->
     <link rel="stylesheet" type="text/css" href="css/libs/reset.css">
     <link rel="stylesheet" href="css/views/base.css">

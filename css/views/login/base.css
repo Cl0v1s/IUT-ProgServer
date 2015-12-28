@@ -1,5 +1,5 @@
 /* line 3, base.scss */
-#search {
+#login {
   background-color: white;
   width: 500px;
   text-align: center;
@@ -8,31 +8,17 @@
   padding-top: 80px;
   margin-bottom: 100px;
   border-radius: 2px; }
-  /* line 13, base.scss */
-  #search span {
+  /* line 14, base.scss */
+  #login span {
     color: #607d8b;
     font-family: Arial, sans-serif; }
-  /* line 19, base.scss */
-  #search a.search {
+  /* line 20, base.scss */
+  #login a.login {
     width: 40px;
-    height: 40px; }
-
-/* line 26, base.scss */
-#about {
-  border-radius: 2px;
-  background-color: white;
-  display: block;
-  width: 500px;
-  margin: auto; }
-  /* line 34, base.scss */
-  #about h1 {
-    text-align: center; }
-  /* line 39, base.scss */
-  #about span {
-    display: block;
-    margin-top: 20px;
-    color: #607d8b;
-    font-family: Arial, sans-serif;
-    line-height: 23px; }
+    height: 40px;
+    background-color: #607d8b;
+    border-radius: 2px;
+    background-size: 90%;
+    background-position: center; }
 
 /*# sourceMappingURL=base.css.map */
