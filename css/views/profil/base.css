@@ -1,0 +1,43 @@
+/* line 3, base.scss */
+#list {
+  background-color: white;
+  width: 500px;
+  text-align: center;
+  line-height: 40px;
+  margin: auto;
+  padding-top: 80px;
+  margin-bottom: 100px;
+  border-radius: 2px;
+  font-family: Arial, sans-serif; }
+  /* line 15, base.scss */
+  #list > span {
+    color: #607d8b;
+    font-family: Arial, sans-serif; }
+  /* line 21, base.scss */
+  #list div.achat {
+    width: 100%;
+    background-color: #455a64;
+    text-align: left;
+    color: white;
+    padding: 10px;
+    position: relative;
+    font-family: Arial, sans-serif; }
+    /* line 31, base.scss */
+    #list div.achat.pair {
+      background-color: #607d8b; }
+    /* line 36, base.scss */
+    #list div.achat span {
+      display: inline-block;
+      width: 80%; }
+    /* line 42, base.scss */
+    #list div.achat a.delete {
+      float: right;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 100%; }
+      /* line 50, base.scss */
+      #list div.achat a.delete:hover {
+        cursor: pointer; }
+
+/*# sourceMappingURL=base.css.map */

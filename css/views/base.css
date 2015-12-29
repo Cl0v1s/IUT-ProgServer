@@ -48,7 +48,19 @@ a.login {
   height: 80px;
   border: transparent 1px solid; }
 
-/* line 63, _buttons.scss */
+/* line 62, _buttons.scss */
+a.delete {
+  display: inline-block;
+  background-image: url("./../../assets/icons/delete.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: transparent 1px solid; }
+
+/* line 77, _buttons.scss */
 a.profil {
   display: inline-block;
   background-image: url("./../../assets/icons/profil.svg");
@@ -60,17 +72,17 @@ a.profil {
   height: 80px;
   border: transparent 1px solid; }
 
-/* line 77, _buttons.scss */
+/* line 91, _buttons.scss */
 input[type=text], input[type=password], select {
   border: #607d8b 1px solid;
   color: #607d8b;
   font-family: Arial, sans-serif; }
 
-/* line 83, _buttons.scss */
+/* line 97, _buttons.scss */
 input[type=text]:hover, input[type=password]:hover, input[type=button]:hover, select:hover {
   border: #22b3f5 1px solid; }
 
-/* line 89, _buttons.scss */
+/* line 103, _buttons.scss */
 input[type="button"] {
   border: #607d8b 1px solid;
   font-family: Arial, sans-serif;

@@ -58,6 +58,20 @@ a.login
   border: rgba(0,0,0,0) 1px solid;
 }
 
+//Bouton supprimer
+a.delete
+{
+  display: inline-block;
+  background-image: url("./../../assets/icons/delete.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: rgba(0,0,0,0) 1px solid;
+}
+
 
 //Bouton de profil
 a.profil

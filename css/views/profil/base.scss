@@ -1,0 +1,58 @@
+@import './../global';
+
+#list
+{
+  background-color: $color-background;
+  width: 500px;
+  text-align: center;
+  line-height: 40px;
+  margin: auto;
+  padding-top: 80px;
+  margin-bottom: 100px;
+  border-radius: 2px;
+  font-family: $font-base;
+
+  &>span
+  {
+    color: $color-contrast;
+    font-family: $font-base;
+  }
+
+  div.achat
+  {
+    width: 100%;
+    background-color: $color-base;
+    text-align: left;
+    color: $color-background;
+    padding: 10px;
+    position: relative;
+    font-family: $font-base;
+
+    &.pair
+    {
+      background-color: $color-contrast;
+    }
+
+    span
+    {
+      display: inline-block;
+      width: 80%;
+    }
+
+    a.delete
+    {
+      float: right;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 100%;
+
+      &:hover
+      {
+        cursor: pointer;
+      }
+
+    }
+  }
+
+}
