@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Musique</title>
@@ -27,9 +28,9 @@
     <div id="content">
       {{__CHILD__}}
     </div>
-    <footer>
+    <!--<footer>
       Site dévelopé par Rafael Lagoinha et Clovis Portron.
-    </footer>
+    </footer>-->
 
     <!--TODO:script de livereload à supprimer-->
     <script src="http://localhost:35729/livereload.js"></script>

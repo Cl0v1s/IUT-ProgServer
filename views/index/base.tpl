@@ -11,8 +11,7 @@
         <option>Compositeur</option>
         <option>Interprète</option>
       </select>
-      <br>
-      <a class="search"></a>
+      <input type="button" value="Rechercher">
     </form>
   </div>
   <div id="about">

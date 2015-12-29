@@ -51,7 +51,19 @@ input[type=text], input[type=password], select
   color: $color-contrast;
   font-family: $font-base;
 }
-input[type=text]:hover, input[type=password]:hover, select:hover
+input[type=text]:hover, input[type=password]:hover,input[type=button]:hover, select:hover
 {
   border: $color-link 1px solid;
+}
+
+//Boutons
+input[type="button"]
+{
+  border: $color-contrast 1px solid;
+  font-family: $font-base;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: $color-contrast;
+  color: $color-background;
+  height: 20px;
 }
