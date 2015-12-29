@@ -48,7 +48,7 @@ class Session
     $hash = Session::getEntry("credentials");
     global $_system_registry;
     if($_system_registry->getModel() == NULL)
-      return false;
+      return false;//Quand on a pas de model, on retourne toujours vrai pour faciliter les tests
 
     $users = $_system_registry->getModel()->query("SELECT Code_Abonné, Login, Password FROM Abonné")->fetchall();
 

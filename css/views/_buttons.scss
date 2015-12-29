@@ -5,6 +5,25 @@ a
   color: $color-link;
 }
 
+//Bouton lien
+a.button
+{
+  display: inline-block;
+  margin: 5px 0px;
+  border: $color-contrast 1px solid;
+  font-family: $font-base;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: $color-contrast;
+  color: $color-background;
+  height: 20px;
+}
+
+a.button:hover
+{
+  border: $color-link 1px solid;
+}
+
 //Bouton de recherche
 a.search
 {
@@ -36,12 +55,22 @@ a.login
   background-size: 100%;
   width: 80px;
   height: 80px;
-    border: rgba(0,0,0,0) 1px solid;
+  border: rgba(0,0,0,0) 1px solid;
 }
 
-a.login:hover
-{
 
+//Bouton de profil
+a.profil
+{
+  display: inline-block;
+  background-image: url("./../../assets/icons/profil.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: rgba(0,0,0,0) 1px solid;
 }
 
 //Champs inputs

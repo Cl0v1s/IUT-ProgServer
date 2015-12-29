@@ -8,11 +8,13 @@ h1
 }
 
 
-form
+form,div.info
 {
   background-color: $color-base;
   border-radius: 2px;
   padding: 10px;
+  color:$color-background;
+  font-family: $font-base;
 
   input[type=text],input[type=password],select
   {

@@ -4,6 +4,22 @@ a {
   color: #22b3f5; }
 
 /* line 9, _buttons.scss */
+a.button {
+  display: inline-block;
+  margin: 5px 0px;
+  border: #607d8b 1px solid;
+  font-family: Arial, sans-serif;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #607d8b;
+  color: white;
+  height: 20px; }
+
+/* line 22, _buttons.scss */
+a.button:hover {
+  border: #22b3f5 1px solid; }
+
+/* line 28, _buttons.scss */
 a.search {
   display: inline-block;
   background-image: url("./../../assets/icons/search.svg");
@@ -17,11 +33,11 @@ a.search {
   border-radius: 2px;
   border: transparent 1px solid; }
 
-/* line 24, _buttons.scss */
+/* line 43, _buttons.scss */
 a.search:hover {
   border: #22b3f5 1px solid; }
 
-/* line 30, _buttons.scss */
+/* line 49, _buttons.scss */
 a.login {
   display: inline-block;
   background-image: url("./../../assets/icons/login.svg");
@@ -32,17 +48,29 @@ a.login {
   height: 80px;
   border: transparent 1px solid; }
 
-/* line 48, _buttons.scss */
+/* line 63, _buttons.scss */
+a.profil {
+  display: inline-block;
+  background-image: url("./../../assets/icons/profil.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: transparent 1px solid; }
+
+/* line 77, _buttons.scss */
 input[type=text], input[type=password], select {
   border: #607d8b 1px solid;
   color: #607d8b;
   font-family: Arial, sans-serif; }
 
-/* line 54, _buttons.scss */
+/* line 83, _buttons.scss */
 input[type=text]:hover, input[type=password]:hover, input[type=button]:hover, select:hover {
   border: #22b3f5 1px solid; }
 
-/* line 60, _buttons.scss */
+/* line 89, _buttons.scss */
 input[type="button"] {
   border: #607d8b 1px solid;
   font-family: Arial, sans-serif;
@@ -59,45 +87,47 @@ h1 {
   font-size: 30px; }
 
 /* line 11, _sections.scss */
-form {
+form, div.info {
   background-color: #455a64;
   border-radius: 2px;
-  padding: 10px; }
-  /* line 17, _sections.scss */
-  form input[type=text], form input[type=password], form select {
+  padding: 10px;
+  color: white;
+  font-family: Arial, sans-serif; }
+  /* line 19, _sections.scss */
+  form input[type=text], form input[type=password], form select, div.info input[type=text], div.info input[type=password], div.info select {
     background-color: #607d8b;
     color: white;
     height: 20px; }
-  /* line 24, _sections.scss */
-  form input[type=text]::-webkit-input-placeholder {
+  /* line 26, _sections.scss */
+  form input[type=text]::-webkit-input-placeholder, div.info input[type=text]::-webkit-input-placeholder {
     color: white;
     opacity: 1; }
-  /* line 30, _sections.scss */
-  form input[type=text]::-moz-placeholder {
+  /* line 32, _sections.scss */
+  form input[type=text]::-moz-placeholder, div.info input[type=text]::-moz-placeholder {
     color: white;
     opacity: 1; }
-  /* line 36, _sections.scss */
-  form input[type=text]:-moz-placeholder {
+  /* line 38, _sections.scss */
+  form input[type=text]:-moz-placeholder, div.info input[type=text]:-moz-placeholder {
     color: white;
     opacity: 1; }
-  /* line 42, _sections.scss */
-  form input[type=text]:-ms-input-placeholder {
+  /* line 44, _sections.scss */
+  form input[type=text]:-ms-input-placeholder, div.info input[type=text]:-ms-input-placeholder {
     color: white;
     opacity: 1; }
-  /* line 48, _sections.scss */
-  form input[type=password]::-webkit-input-placeholder {
+  /* line 50, _sections.scss */
+  form input[type=password]::-webkit-input-placeholder, div.info input[type=password]::-webkit-input-placeholder {
     color: white;
     opacity: 1; }
-  /* line 54, _sections.scss */
-  form input[type=password]::-moz-placeholder {
+  /* line 56, _sections.scss */
+  form input[type=password]::-moz-placeholder, div.info input[type=password]::-moz-placeholder {
     color: white;
     opacity: 1; }
-  /* line 60, _sections.scss */
-  form input[type=password]:-moz-placeholder {
+  /* line 62, _sections.scss */
+  form input[type=password]:-moz-placeholder, div.info input[type=password]:-moz-placeholder {
     color: white;
     opacity: 1; }
-  /* line 66, _sections.scss */
-  form input[type=password]:-ms-input-placeholder {
+  /* line 68, _sections.scss */
+  form input[type=password]:-ms-input-placeholder, div.info input[type=password]:-ms-input-placeholder {
     color: white;
     opacity: 1; }
 
@@ -153,7 +183,7 @@ div#content {
   background-color: white;
   width: 100%;
   height: 100%;
-  position: relative;
-  top: -80px; }
+  position: absolute;
+  top: 105px; }
 
 /*# sourceMappingURL=base.css.map */
