@@ -22,6 +22,7 @@
         MUSIQUE
       </span>
       <nav>
+        <a class="index" href="/index"></a>
         [[!_logged]]<a class="login" href="/login"></a>[[/_logged]]
         [[_logged]]<a class="profil" href="/profil"></a>[[/_logged]]
       </nav>

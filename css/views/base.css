@@ -73,16 +73,28 @@ a.profil {
   border: transparent 1px solid; }
 
 /* line 91, _buttons.scss */
+a.index {
+  display: inline-block;
+  background-image: url("./../../assets/icons/index.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: transparent 1px solid; }
+
+/* line 105, _buttons.scss */
 input[type=text], input[type=password], select {
   border: #607d8b 1px solid;
   color: #607d8b;
   font-family: Arial, sans-serif; }
 
-/* line 97, _buttons.scss */
+/* line 111, _buttons.scss */
 input[type=text]:hover, input[type=password]:hover, input[type=button]:hover, select:hover {
   border: #22b3f5 1px solid; }
 
-/* line 103, _buttons.scss */
+/* line 117, _buttons.scss */
 input[type="button"] {
   border: #607d8b 1px solid;
   font-family: Arial, sans-serif;

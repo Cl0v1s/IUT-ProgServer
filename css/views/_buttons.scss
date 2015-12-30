@@ -87,6 +87,20 @@ a.profil
   border: rgba(0,0,0,0) 1px solid;
 }
 
+//Bouton index
+a.index
+{
+  display: inline-block;
+  background-image: url("./../../assets/icons/index.svg");
+  opacity: 0.72;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  width: 80px;
+  height: 80px;
+  border: rgba(0,0,0,0) 1px solid;
+}
+
 //Champs inputs
 input[type=text], input[type=password], select
 {
