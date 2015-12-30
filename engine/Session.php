@@ -54,7 +54,7 @@ class Session
 
     for($i = 0; $i <count($users); $i++)
     {
-      $h = md5(md5($users[$i]["name"]).$users[$i]["password"]);
+      $h = md5(md5($users[$i]["Login"]).$users[$i]["Password"]);
       if($hash == $h)
         return $users[$i];
     }
