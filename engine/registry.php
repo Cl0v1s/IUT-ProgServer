@@ -55,6 +55,8 @@ class Registry
     $parameters["_logged"] = (Session::getLoggedAccount() != false);
     if(isset($this->_datasheme["404"]) == false)
       throw new Exception("Vous devez définir la fonction 404.");
+    if(isset($this->_datasheme["refused"]) == false)
+      throw new Exception("Vous devez définir la fonction accès refusé.");
     if(isset($this->_datasheme[$url]))
     {
       $data_url = str_replace ( "/".$url , "" , "$_SERVER[REQUEST_URI]");
@@ -72,13 +74,13 @@ class Registry
         if(isset($data_url[$i]))
           $parameters[$data_sheme[$i]] = $data_url[$i];
       }
-      if($this->_requireAuth[$url] == false || ($this->_requireAuth[$url] == true && isset($_COOKIE["credentials"]) == true && $this->checkCredentials($_COOKIE["credentials"]) == true ) )
+      if($this->_requireAuth[$url] == false || ($this->_requireAuth[$url] == true && isset($_SESSION["credentials"]) == true && $this->checkCredentials($_SESSION["credentials"]) == true ) )
       {
         $this->_functions[$url]($parameters);
       }
       else {
         $parameters["_error"] = true;
-        $this->_functions["404"]($parameters);
+        $this->_functions["refused"]($parameters);
       }
     }
     else
