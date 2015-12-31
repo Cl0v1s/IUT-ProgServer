@@ -18,20 +18,8 @@
     font-family: $font-base;
   }
 
-  div.achat
+  div.list div.entry
   {
-    width: 100%;
-    background-color: $color-base;
-    text-align: left;
-    color: $color-background;
-    padding: 10px;
-    position: relative;
-    font-family: $font-base;
-
-    &.pair
-    {
-      background-color: $color-contrast;
-    }
 
     span
     {

@@ -6,10 +6,10 @@
     <span>
       <p>Voici les articles que vous avez sélectionné.</p>
     </span>
-    <div>
+    <div class="list">
       [[achat]]
         <!--TODO: AJouter un lien vers la page de l'enregistrement-->
-        <div class="achat {{pair}}"><span><h2>{{Titre}} de {{Prénom_Musicien}} {{Nom_Musicien}}</h2>à {{Prix}}€</span><a class="delete" data-url="{{_url}}"  data-id="{{Code_Achat}}"></a></div>
+        <div class="entry {{pair}}"><span><h2>{{Titre}} de {{Prénom_Musicien}} {{Nom_Musicien}}</h2>à {{Prix}}€</span><a class="delete" data-url="{{_url}}"  data-id="{{Code_Achat}}"></a></div>
       [[/achat]]
       <h2>Total: {{total}}€</h2>
     </div>

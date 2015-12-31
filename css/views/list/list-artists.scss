@@ -1,0 +1,39 @@
+@import './../global';
+
+
+div#content>div>div
+{
+  width: 500px;
+  margin: auto;
+  margin-top: 30px;
+
+  div.list
+  {
+    margin-top: 30px;
+
+    div.entry
+    {
+      img
+      {
+        float: right;
+        width: 100px;
+        height: 100px;
+      }
+
+      h1
+      {
+        color: $color-background;
+      }
+
+      span
+      {
+        display: block;
+        margin-top: 20px;
+      }
+
+    }
+
+  }
+
+
+}

@@ -1,5 +1,6 @@
 @import 'global';
 
+//Titre
 h1
 {
   color: $color-base;
@@ -7,7 +8,7 @@ h1
   font-size: 30px;
 }
 
-
+//Formulaires et zones d'information
 form,div.info
 {
   background-color: $color-base;
@@ -69,5 +70,26 @@ form,div.info
   {
     color: $color-background;
     opacity: 1;
+  }
+}
+
+//Listes d'énumérations
+div.list
+{
+
+  div.entry
+  {
+    width: 100%;
+    background-color: $color-base;
+    text-align: left;
+    color: $color-background;
+    padding: 10px;
+    position: relative;
+    font-family: $font-base;
+
+    &.pair
+    {
+      background-color: $color-contrast;
+    }
   }
 }
