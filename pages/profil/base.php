@@ -1,7 +1,28 @@
 <?php
-    //PAGE DE PROFIL ET AFFICHAGE PANIER
+    //OPERATIONS SUR LE PANIER
     $profil = function($parameters)
     {
+        //Verification du type d'action
+        if(isset($parameters["action"]) && $parameters["action"] == "delete") //Si l'action est reglée sur supprimer
+        {
+          //Récupération de l'id de l'achat à supprimer
+          if(!isset($_POST["id"])) //Si l'id n'est pas passé on redirige vers l'index
+          {
+            header("Location: /index");
+            return;
+          }
+          $item_id = Template::MakeTextSafe($_POST["id"]);
+          //On paramètre la valeur de retour de la page
+          $data = array();
+          $data["state"] = "NO";
+          $result = $_system_registry->getModel()->exec("DELETE FROM Achat WHERE Achat.Code_Achat = '".$item_id."'");
+          if($result == 1) //Si une supression a bien eu lieu
+            $data["state"] = "OK";
+          //Retour du resultat sous forme de json dans la page
+          template_json($data);
+          return;
+        }
+        //Sinon consultation du panier
         # Récupère l'utilisateur connecté
         $id = Session::getLoggedAccount()[0];
         $parameters["username"] = Session::getLoggedAccount()[1];
@@ -17,32 +38,14 @@
         $parameters["total"] = 0;
         for($i = 0; $i <count($parameters["achat"]); $i++)
         {
+            $parameters["achat"][$i]["pair"] = "";
+            if($i % 2 == 0)
+              $parameters["achat"][$i]["pair"] = "pair";
             $parameters["total"] += $parameters["achat"][$i]["Prix"];
         }
         template("views/login/profil.tpl", $parameters, "views/base.tpl");
     };
-    $_system_registry->registerPage("profil", "", $profil, true);
+    $_system_registry->registerPage("profil", "action", $profil, true);
 
-
-    //OPERATION DE SUPRESSION D'UN ELEMENT DU PANIER
-    $delete = function($parameters)
-    {
-        //Récupération de l'id de l'achat à supprimer
-        if(!isset($_POST["id"])) //Si l'id n'est pas passé on redirige vers l'index
-        {
-          header("Location: /index");
-          return;
-        }
-        $item_id = Template::MakeTextSafe($_POST["id"]);
-        //On paramètre la valeur de retour de la page
-        $data = array();
-        $data["state"] = "NO";
-        $result = $_system_registry->getModel()->exec("DELETE FROM Achat WHERE Achat.Code_Achat = '".$item_id."'");
-        if($result == 1) //Si une supression a bien eu lieu
-          $data["state"] = "OK";
-        //Retour du resultat sous forme de json dans la page
-        template_json($data);
-    };
-    $_system_registry->registerPage("delete", "", $delete, true);
 
 ?>
