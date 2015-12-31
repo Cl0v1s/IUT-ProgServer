@@ -24,21 +24,17 @@ div#content > div {
       /* line 32, base.scss */
       div#content > div div#bio > div span {
         color: #607d8b; }
-  /* line 44, base.scss */
-  div#content > div div.list div.entry img {
-    width: 100px;
-    height: 100px; }
-  /* line 50, base.scss */
-  div#content > div div.list div.entry > div {
-    float: right;
-    text-align: right; }
-    /* line 55, base.scss */
-    div#content > div div.list div.entry > div h1 {
-      color: white;
-      font-size: 20px; }
-    /* line 61, base.scss */
-    div#content > div div.list div.entry > div span {
-      color: #607d8b;
-      line-height: 30px; }
+  /* line 48, base.scss */
+  div#content > div div.list div.entry > div h1 {
+    color: white;
+    font-size: 20px; }
+  /* line 54, base.scss */
+  div#content > div div.list div.entry > div span {
+    color: #607d8b;
+    line-height: 30px; }
+    /* line 58, base.scss */
+    div#content > div div.list div.entry > div span a {
+      display: block;
+      text-align: right; }
 
 /*# sourceMappingURL=base.css.map */

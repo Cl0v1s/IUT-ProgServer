@@ -41,16 +41,9 @@ div#content>div
       div.entry
       {
 
-        img
-        {
-          width: 100px;
-          height: 100px;
-        }
 
         &>div
         {
-            float: right;
-            text-align: right;
 
             h1
             {
@@ -62,7 +55,15 @@ div#content>div
             {
               color: $color-contrast;
               line-height: 30px;
+              a
+              {
+                display: block;
+                text-align: right;
+              }
+
             }
+
+
           }
         }
     }

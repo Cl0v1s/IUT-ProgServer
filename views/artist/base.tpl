@@ -9,8 +9,8 @@
   </div>
 
   <div class="list">
-    [[oeuvres]]<!--Libellé Abrégé est dans la table Genre-->
-      <a href="{{_url}}/list-albums/{{Code_Oeuvre}}"><div class="entry {{pair}}"><img src="{{Pochette}}"><div><h1>{{Titre_Album}} - {{Année_Album}}</h1><span>{{Nom_Editeur}}<br>{{Libellé_Abrégé}}<br><a>Cliquez pour consulter la page de l'album</a></span></div></div></a>
+    [[oeuvres]]
+      <a href="{{_url}}/list-albums/{{Code_Oeuvre}}"><div class="entry {{pair}}"><div><h1>{{Titre_Oeuvre}} - {{Sous_Titre}}</h1><span>{{Année}} - {{Opus}}<br><a>Cliquez pour consulter la liste des albums</a></span></div></div></a>
     [[/oeuvres]]
   </div>
 </div>
