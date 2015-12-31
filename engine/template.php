@@ -41,6 +41,12 @@ class Template
 
   public function load()
   {
+
+    if(!file_exists($this->_file))
+    {
+      echo "Template: Vous devez créer le fichier template ".$this->_file.", il n'existe pas.";
+      die();
+    }
     $this->_text = file_get_contents($this->_file);
     if($this->_text === "")
       return "";
