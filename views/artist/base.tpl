@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/views/artist/base.css">
+<link rel="stylesheet" href="{{_url}}/css/views/artist/base.css">
 <div>
   <div id="bio">
     <img src="{{Photo}}">
@@ -10,7 +10,7 @@
 
   <div class="list">
     [[oeuvres]]<!--Libellé Abrégé est dans la table Genre-->
-      <a href="/list-albums/{{Code_Oeuvre}}"><div class="entry {{pair}}"><img src="{{Pochette}}"><div><h1>{{Titre_Album}} - {{Année_Album}}</h1><span>{{Nom_Editeur}}<br>{{Libellé_Abrégé}}<br><a>Cliquez pour consulter la page de l'album</a></span></div></div></a>
+      <a href="{{_url}}/list-albums/{{Code_Oeuvre}}"><div class="entry {{pair}}"><img src="{{Pochette}}"><div><h1>{{Titre_Album}} - {{Année_Album}}</h1><span>{{Nom_Editeur}}<br>{{Libellé_Abrégé}}<br><a>Cliquez pour consulter la page de l'album</a></span></div></div></a>
     [[/oeuvres]]
   </div>
 </div>

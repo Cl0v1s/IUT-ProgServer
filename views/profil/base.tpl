@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/views/profil/base.css">
-<script type="text/javascript" src="js/views/profil/base.js"></script>
+<link rel="stylesheet" href="{{_url}}/css/views/profil/base.css">
+<script type="text/javascript" src="{{_url}}/js/views/profil/base.js"></script>
 <div>
   <div id="list">
     <h1>Bonjour {{username}} !</h1>

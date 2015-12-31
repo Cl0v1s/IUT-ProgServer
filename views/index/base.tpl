@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/views/index/base.css">
+<link rel="stylesheet" href="{{_url}}/css/views/index/base.css">
 <div>
   <div id="search">
     <h1>Notre catalogue</h1>
