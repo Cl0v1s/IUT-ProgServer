@@ -4,12 +4,14 @@
   {
     global $_system_registry;
     //test de déclaration des paramètres
-    if (!isset($parameters["type"]) || $parameters["type"] == "" || !isset($parameters["name"]) || $parameters["name"] ==  "")
+    if (!isset($parameters["type"]) || $parameters["type"] == "" || !isset($parameters["name"]) || $parameters["name"] == "")
     {
       header("Location: ".$parameters["_url"]."/404");
       return;
     }
     //on rends les paramètres innofensifs
+    if($parameters["name"] == "all")
+      $parameters["name"] = "";
     $parameters["type"] = Template::MakeTextSafe($parameters["type"]);
     $parameters["name"] = Template::MakeTextSafe($parameters["name"]);
 
@@ -24,8 +26,11 @@
       case "performer":
         $sql = $sql."INNER JOIN Interpréter ON Interpréter.Code_Musicien = Musicien.Code_Musicien ";
       break;
-      default: //Cas du compositeur qui est aussi le cas par default
+      case "composer":
         $sql = $sql."INNER JOIN Composer ON Composer.Code_Musicien = Musicien.Code_Musicien ";
+      break;
+      default: //Cas du all et par defaut
+        
       break;
     }
     //Ajout des paramètres de la recherche
@@ -44,6 +49,9 @@
     }
     //Ajout des resultats dans les paramètres passés au template
     $parameters["results"] = $results;
+    if($parameters["name"] == "all")
+      $parameters["name"] = "Tout le monde";
+
     template("views/search/base.tpl", $parameters, "views/base.tpl");
   };
   $_system_registry->registerPage("search-artist", "/type/name", $search_artist);
