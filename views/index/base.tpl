@@ -1,15 +1,16 @@
 <link rel="stylesheet" href="{{_url}}/css/views/index/base.css">
+<script type="text/javascript" src="{{_url}}/js/views/index/base.js"></script>
 <div>
   <div id="search">
     <h1>Notre catalogue</h1>
     <span>Recherchez la musique qui vous correspond</span>
     <form>
-      <input name="name" type="text" placeholder="Nom...">
-      <select>
-        <option>Tout</option>
-        <option>Chef d'orchestre</option>
-        <option>Compositeur</option>
-        <option>Interprète</option>
+      <input id="name" name="name" type="text" placeholder="Nom...">
+      <select id="type">
+        <option value="all">Tout</option>
+        <option value="director">Chef d'orchestre</option>
+        <option value="composer">Compositeur</option>
+        <option value="performer">Interprète</option>
       </select>
       <input type="button" value="Rechercher">
     </form>
