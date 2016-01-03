@@ -18,6 +18,8 @@
   //Ecrire votre code ici
   include_once "pages/index/base.php";
   include_once "pages/login/base.php";
+  include_once "pages/profil/base.php";
+  include_once "pages/search/base.php";
   include_once "pages/error/base.php";
   ////////////////////////////////////////////////////////////////////////////////
 
