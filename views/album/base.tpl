@@ -10,7 +10,7 @@
 	</div>
 	<div class="list">
 		[[records]]
-			<a href="{{_url}}/record/{{Code_Morceau}}"><div class="entry {{pair}}"><h1>{{Titre}}</h1><span>{{Durée}} pour {{Prix}}</span><audio src="{{Extrait}}" controls></audio></div></a>
+			<div class="entry {{pair}}"><h1>{{Titre}}</h1><span>{{Durée}} pour {{Prix}}</span><audio src="{{Extrait}}" controls></audio><a class="button" data-code="{{Code_Morceau}}">Ajouter au panier</a></div>
 		[[/records]]
 	</div>
 </div>

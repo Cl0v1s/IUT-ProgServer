@@ -18,3 +18,5 @@ Il s'agit de construire un site web de type e-commerce s'appuyant sur la base de
 - [x] Une zone sécurisée (donc avec connexion et suivi de session) permettant de construire un panier d'achat.
 - [ ] Une page nommée converter prenant comme paramètre le type de fichier devant être retourné et le blob du fichier à retourner, chargé de convertir des données Blob de la base vers un fichier.
 - [ ] Depuis la page décrivant un album, un accès aux services Amazon affichant les informations sur l'album (détails, prix, ...) grâce à la valeur contenue dans le champ ASIN de la table Album (en utilisant l'API Amazon ), ou la liste des albums semblables disponibles lorsque ce champ n'est pas renseigné (pas un simple renvoi sur une page !).
+- [ ] Faire une page json permettant d'ajouter un element au panier de session 
+- [ ] Recoder la page de session de profil, les achats ne sont pas dans la base mais dans les sessions
