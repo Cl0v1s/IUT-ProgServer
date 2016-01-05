@@ -19,9 +19,11 @@
         {
             $parameters["login"] = true;
             Session::saveCredentialsHash($_POST["hash"]);
+            //Création des variables des paniers
+            $basket = array();
+            Session::addEntry("basket", $backet);
         }*/
         //$parameters["login"] = false;
-        $parameters["login"] = true;
         template("views/login/log.tpl", $parameters, "views/base.tpl");
     };
     $_system_registry->registerPage("log", "", $log);

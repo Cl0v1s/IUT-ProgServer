@@ -32,6 +32,12 @@ class Session
     unset($_SESSION[$name]);
   }
 
+  public static function replaceEntry($name, $content)
+  {
+    Session::removeEntry($name);
+    Session::addEntry($name, $content);
+  }
+
   public static function checkAccount($user, $password)
   {
     global $_system_registry;

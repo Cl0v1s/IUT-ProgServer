@@ -70,7 +70,7 @@
         }
         template("views/profil/base.tpl", $parameters, "views/base.tpl");
     };
-    $_system_registry->registerPage("profil", "action", $profil, false);
+    $_system_registry->registerPage("profil", "action", $profil, true);
 
 
 ?>
