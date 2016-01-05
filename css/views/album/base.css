@@ -1,0 +1,47 @@
+/* line 3, base.scss */
+div#content div {
+  width: 500px;
+  margin: auto; }
+  /* line 8, base.scss */
+  div#content div div#album {
+    font-family: Arial, sans-serif;
+    margin-top: 30px; }
+    /* line 12, base.scss */
+    div#content div div#album img {
+      float: left;
+      width: 100px;
+      height: 100px; }
+    /* line 19, base.scss */
+    div#content div div#album > div {
+      margin-top: 10px;
+      float: left;
+      width: 395px;
+      padding-left: 5px; }
+      /* line 26, base.scss */
+      div#content div div#album > div a {
+        display: block;
+        cursor: pointer; }
+  /* line 34, base.scss */
+  div#content div div.list {
+    clear: both;
+    padding-top: 30px; }
+    /* line 38, base.scss */
+    div#content div div.list div.entry {
+      position: relative;
+      font-family: #455a64;
+      margin-bottom: 30px; }
+      /* line 43, base.scss */
+      div#content div div.list div.entry h1 {
+        color: white;
+        margin-bottom: 5px; }
+      /* line 49, base.scss */
+      div#content div div.list div.entry audio {
+        display: block;
+        margin: 5px 0px; }
+      /* line 55, base.scss */
+      div#content div div.list div.entry a.button {
+        position: absolute;
+        right: 10px;
+        top: 5px; }
+
+/*# sourceMappingURL=base.css.map */

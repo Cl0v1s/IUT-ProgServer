@@ -17,7 +17,14 @@ a.button
   background-color: $color-contrast;
   color: $color-background;
   height: 20px;
+  cursor: pointer;
+
+  &.valid
+  {
+    background-color: green;
+  }
 }
+
 
 a.button:hover
 {
