@@ -12,7 +12,7 @@
         <option value="composer">Compositeur</option>
         <option value="performer">Interprète</option>
       </select>
-      <input type="button" value="Rechercher">
+      <input type="button" data-url={{_url}} value="Rechercher">
     </form>
   </div>
   <div id="about">

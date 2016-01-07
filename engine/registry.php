@@ -35,7 +35,12 @@ class Registry
 
   public function examine()
   {
-    $url = explode("/", "$_SERVER[REQUEST_URI]")[1];
+    //$url = explode("/", "$_SERVER[REQUEST_URI]")[1] ;
+    $url = explode("/", "$_SERVER[REQUEST_URI]");
+    if(count($url) >= 6)
+        $url = $url[5];
+    else
+        $url = $this->_configuration->_index;
     //Lecture de la requête de l'utilisateur
     if($url != "")
     {
