@@ -28,7 +28,7 @@
         $parameters["Année_Album"] = $results["Année_Album"];
         $parameters["Pochette"] = $results["Pochette"];
         $parameters["ASIN"] = $results["ASIN"];
-        template("views/album/album.tpl", $parameters, "views/base.tpl");
+        template("views/album/base.tpl", $parameters, "views/base.tpl");
     };
     $_system_registry->registerPage("album", "/code", $album);
 
