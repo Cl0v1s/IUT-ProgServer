@@ -21,7 +21,7 @@ class Registry
     $this->_configuration = $configuration;
     date_default_timezone_set($configuration->_timezone);
     if($configuration->_database != false)
-      $this->_model = new PDO($configuration->_database) or die("Impossible d'accéder à la base de données.");
+      $this->_model = $configuration->_database->create() or die("Impossible d'accéder à la base de données.");
     else
       unset($this->_model);
   }
@@ -67,17 +67,24 @@ class Registry
       $data_url = str_replace ( "/".$url , "" , "$_SERVER[REQUEST_URI]");
       $data_url = explode("/", $data_url);
       $data_sheme = explode("/", $this->_datasheme[$url]);
+
+
+
+
       //Suppression des valeurs inutiles afin d'assouplir le système
       for($i = 1; $i < count($data_url); $i++)
       {
         if($data_url[$i] == "")
           unset($data_url[$i]);
-      }
+        }
       //affectation des paramètres
       for($i = 1; $i<count($data_sheme); $i++)
       {
-        if(isset($data_url[$i]))
-          $parameters[$data_sheme[$i]] = $data_url[$i];
+         //TODO: supprimer le +4 dans la version finale du moteur
+        if(isset($data_url[$i+4]))
+        {
+          $parameters[$data_sheme[$i]] = $data_url[$i+4];
+        }
       }
       if($this->_requireAuth[$url] == false || ($this->_requireAuth[$url] == true && isset($_SESSION["credentials"]) == true && $this->checkCredentials($_SESSION["credentials"]) == true ) )
       {

@@ -99,7 +99,10 @@ class Template
         }
         //remplacement des valaurs par des variables
         if(is_array($value) == false)
-          $this->_text = str_replace("{{".$key."}}", $value, $this->_text);
+        {
+            if(gettype($value) != "object")
+                $this->_text = str_replace("{{".$key."}}", $value, $this->_text);
+        }
       }
     //test de l'existence de liste non complétées
     $match = array();
