@@ -19,6 +19,7 @@
           //Détermination de la parité pour le design
           if($i % 2 == 0)
             $results[$i]["pair"] = "pair";
+          $results[$i]["Annee"] = $results[$i][utf8_decode("Année")];
         }
         $parameters["oeuvres"] = $results;
         // Récupère les informations sur l'ariste

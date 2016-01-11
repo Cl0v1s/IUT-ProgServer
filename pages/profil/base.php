@@ -66,6 +66,7 @@
               if($i % 2 == 0)
                 $parameters["achat"][$i]["pair"] = "pair";
               $parameters["total"] += $parameters["achat"][$i]["Prix"];
+              $results[$i]["Prenom_Musicien"] = $results[$i][utf8_decode("Prénom_Musicien")];
           }
         }
         template("views/profil/base.tpl", $parameters, "views/base.tpl");

@@ -19,6 +19,7 @@
           //Détermination de la parité pour le design
           if($i % 2 == 0)
             $results[$i]["pair"] = "pair";
+          $results[$i]["Annee_Album"] = $results[$i][utf8_decode("Année_Album")];
         }
         $parameters["albums"] = $results;
         // Récupère les informations sur l'oeuvre
