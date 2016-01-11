@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{_url}}/css/views/search/base.css">
 <div>
   <div>
+<<<<<<< HEAD
     <!--A RAF': Ta page doit etre de la forme /list-artists/type/name-->
     <h1>Résultats de la recherche de {{name}} parmi {{type}}</h1>
     <div class="list">
