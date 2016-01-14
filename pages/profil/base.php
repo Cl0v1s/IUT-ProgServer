@@ -2,6 +2,8 @@
     //OPERATIONS SUR LE PANIER
     $profil = function($parameters)
     {
+        global $_system_registry;
+        
         //Verification du type d'action
         if(isset($parameters["action"]) && $parameters["action"] == "delete") //Si l'action est reglée sur supprimer
         {
@@ -66,7 +68,6 @@
               if($i % 2 == 0)
                 $parameters["achat"][$i]["pair"] = "pair";
               $parameters["total"] += $parameters["achat"][$i]["Prix"];
-              $results[$i]["Prenom_Musicien"] = $results[$i][utf8_decode("Prénom_Musicien")];
           }
         }
         template("views/profil/base.tpl", $parameters, "views/base.tpl");

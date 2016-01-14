@@ -2,6 +2,7 @@
 
     $album = function($parameters)
     {
+        global $_system_registry;
         if(!isset($parameters["code"]) or $parameters["code"]="")
         {
             header("Location: ".$parameters["_url"]."/404");
@@ -20,7 +21,6 @@
           //Détermination de la parité pour le design
           if($i % 2 == 0)
             $results[$i]["pair"] = "pair";
-          $results[$i]["Duree"] = $results[$i][utf8_decode("Durée")];
         }
         $parameters["records"] = $results;
         $results = $_system_registry->getModel()->query("SELECT DISTINCT Album.Code_Album as Code_Album, Album.Titre_Album as Titre_Album, Album.Année_Album as Année_Album, Album.Pochette as Pochette, Album.ASIN as ASIN WHERE Album.Code_Album = '".$parameters["code"]."'")->fetchall();

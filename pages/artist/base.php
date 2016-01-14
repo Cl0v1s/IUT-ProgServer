@@ -2,6 +2,8 @@
 
     $artist = function($parameters)
     {
+        global $_system_registry;
+        
         if(!isset($parameters["code"]) or $parameters["code"]="")
         {
             header("Location: ".$parameters["_url"]."/404");
