@@ -10,7 +10,7 @@
 	</div>
 	<div class="list">
 		[[records]]
-			<div class="entry {{pair}}"><h1>{{Titre}}</h1><span>{{Duree}} pour {{Prix}}</span><audio src="{{Extrait}}" controls></audio><a class="button" data-code="{{Code_Morceau}}">Ajouter au panier</a></div>
+			<div class="entry {{pair}}"><h1>{{Titre}}</h1><span>{{Duree}} pour {{Prix}}€</span><audio src="{{Extrait}}" controls></audio><a class="button" data-code="{{Code_Morceau}}">Ajouter au panier</a></div>
 		[[/records]]
 	</div>
 </div>
