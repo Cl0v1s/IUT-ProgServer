@@ -15,7 +15,7 @@ class Model
 
     public function create()
     {
-        return new PDO($this->_chain, $this->_user, $this->_password);
+        return new PDO($this->_chain, $this->_user, $this->_password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
 
 };
