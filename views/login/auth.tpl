@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{_url}}/css/views/login/log.css">
+<link rel="stylesheet" href="{{_url}}/css/views/login/auth.css">
 <div>
   [[login]]
     <div class="info">Vous êtes maintenant connecté.<br><a class="button" href="{{_url}}/index">Cliquez ici pour retourner à l'index</a></div>

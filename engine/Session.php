@@ -51,18 +51,20 @@ class Session
 
   public static function getLoggedAccount()
   {
-    $hash = Session::getEntry("credentials");
     global $_system_registry;
+    $hash = Session::getEntry("credentials");
+
     if($_system_registry->getModel() == NULL)
       return false;//Quand on a pas de model, on retourne toujours vrai pour faciliter les tests
-
     $users = $_system_registry->getModel()->query("SELECT Code_Abonné, Login, Password FROM Abonné")->fetchall();
 
     for($i = 0; $i <count($users); $i++)
     {
       $h = md5(md5($users[$i]["Login"]).$users[$i]["Password"]);
       if($hash == $h)
+      {
         return $users[$i];
+        }
     }
     return false;
   }

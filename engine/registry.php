@@ -86,7 +86,7 @@ class Registry
           $parameters[$data_sheme[$i]] = $data_url[$i+4];
         }
       }
-      if($this->_requireAuth[$url] == false || ($this->_requireAuth[$url] == true && isset($_SESSION["credentials"]) == true && $this->checkCredentials($_SESSION["credentials"]) == true ) )
+      if($this->_requireAuth[$url] == false || ($this->_requireAuth[$url] == true && isset($_SESSION["credentials"]) == true && SESSION::checkCredentials($_SESSION["credentials"]) == true ) )
       {
         $this->_functions[$url]($parameters);
       }
