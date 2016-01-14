@@ -7,9 +7,10 @@ $(document).ready(function()
     var self = $(this);
     $.post(url+"/profil/delete", {"id": id}, function(data)
     {
-      if(data.state == "OK")
+      console.log(data);
+      if(data.state == "ok")
       {
-        self.parent().remove();
+        window.location= url+"/profil";
       }
     });
   });

@@ -2,6 +2,8 @@ $(document).ready(function()
 {
   $("input[type=button]").click(function(e)
   {
+    $("#name").removeClass("error");
+    $("#password").removeClass("error");
     var name=$("#name").val();
     var password=$("#password").val();
     e.preventDefault();
