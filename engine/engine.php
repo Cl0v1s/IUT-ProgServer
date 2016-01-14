@@ -5,6 +5,6 @@
   include_once 'template.php';
   include_once 'Model.php';
 
-  $_system_registry = new Registry(new RegistryConfiguration("http://info-timide.iut.u-bordeaux.fr/perso/2016/cportron/Projet27","index", new Model("sqlsrv:Server=INFO-SIMPLET;Database=Classique", "ETD", "ETD"),"Europe/Paris", NULL));
+  $_system_registry = new Registry(new RegistryConfiguration("http://info-timide.iut.u-bordeaux.fr/perso/2016/cportron/Projet27","index", new Model("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD"),"Europe/Paris", NULL));
 
 ?>
