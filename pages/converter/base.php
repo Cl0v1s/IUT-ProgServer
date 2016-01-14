@@ -22,12 +22,13 @@
 			case "picture": //on traite le cas de la photo
 				$sql ="";
 				if($parameters['table'] == "artist")
-					$sql = "SELECT Photo FROM Musicien WHERE Musicien.Code_Musicien = '".$parameters["id"]."'";
-
+					$sql = "SELECT Photo as picture FROM Musicien WHERE Musicien.Code_Musicien = '".$parameters["id"]."'";
+				else if($parameters["table"] == "album")
+					$sql = "SELECT Pochette as picture FROM Album WHERE Album.Code_Album = '".$parameters["id"]."'";
 				$result = $_system_registry->getModel()->query($sql)->fetch();
 				//TODO: parser le blob pour détecter le type de l'image
 				header('Content-Type: image/jpeg');
-				$image  = pack("H*", $result["Photo"]);
+				$image  = pack("H*", $result["picture"]);
 				echo $image;
 				return;
 			break;

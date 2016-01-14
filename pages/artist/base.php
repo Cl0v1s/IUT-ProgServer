@@ -28,7 +28,7 @@
         }
         $parameters["interpretations"] = $results;
         // Récupère les informations sur l'ariste
-        $results = $_system_registry->getModel()->query("SELECT Musicien.Code_Musicien as Code_Musicien, Musicien.Nom_Musicien as Nom_Musicien, Musicien.Prénom_Musicien as Prénom_Musicien, Musicien.Année_Naissance as Année_Naissance, Musicien.Année_Mort as Année_Mort, Musicien.Photo as Photo FROM Musicien WHERE Musicien.Code_Musicien = '".$parameters["code"]."'")->fetch();
+        $results = $_system_registry->getModel()->query("SELECT Musicien.Code_Musicien as Code_Musicien, Musicien.Nom_Musicien as Nom_Musicien, Musicien.Prénom_Musicien as Prenom_Musicien, Musicien.Année_Naissance as Annee_Naissance, Musicien.Année_Mort as Annee_Mort FROM Musicien WHERE Musicien.Code_Musicien = '".$parameters["code"]."'")->fetch();
         // Remplacement des chaines vides par "Inconnu"
         if($results["Nom_Musicien"] == "" || !isset($results["Nom_Musicien"]))
           $results["Nom_Musicien"] = "Inconnu";

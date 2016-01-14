@@ -1,0 +1,22 @@
+/* line 3, base.scss */
+#content div #artwork {
+  width: 500px;
+  margin: auto;
+  margin-top: 30px; }
+/* line 10, base.scss */
+#content div div.list {
+  margin-top: 30px;
+  width: 500px;
+  margin: auto; }
+  /* line 18, base.scss */
+  #content div div.list div.entry img {
+    width: 100px;
+    height: 100px; }
+  /* line 24, base.scss */
+  #content div div.list div.entry > span {
+    max-width: 400px;
+    width: 400px;
+    float: right;
+    text-align: right; }
+
+/*# sourceMappingURL=base.css.map */

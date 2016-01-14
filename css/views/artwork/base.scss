@@ -1,0 +1,34 @@
+#content div
+{
+  #artwork
+  {
+    width:  500px;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  div.list
+  {
+    margin-top: 30px;
+    width: 500px;
+    margin: auto;
+
+    div.entry
+    {
+      img
+      {
+        width: 100px;
+        height: 100px;
+      }
+
+      &>span
+      {
+        max-width: 400px;
+        width: 400px;
+        float: right;
+        text-align: right;
+      }
+    }
+  }
+
+}
