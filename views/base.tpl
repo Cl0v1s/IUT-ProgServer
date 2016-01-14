@@ -33,8 +33,5 @@
     <!--<footer>
       Site dévelopé par Rafael Lagoinha et Clovis Portron.
     </footer>-->
-
-    <!--TODO:script de livereload à supprimer-->
-    <script src="http://localhost:35729/livereload.js"></script>
   </body>
 </html>

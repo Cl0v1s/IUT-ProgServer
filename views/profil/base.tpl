@@ -7,9 +7,9 @@
       <p>Voici les articles que vous avez sélectionné.</p>
     </span>
     <div class="list">
+              <!--TODO: AJouter un lien vers la page de l'enregistrement-->
       [[achat]]
-        <!--TODO: AJouter un lien vers la page de l'enregistrement-->
-        <div class="entry {{pair}}"><span><h2>{{Titre}} de {{Prénom_Musicien}} {{Nom_Musicien}}</h2>à {{Prix}}€</span><a class="delete" data-url="{{_url}}"  data-id="{{Code_Morceau}}"></a></div>
+        <div class="entry {{pair}}"><span><h2>{{Titre}} de {{Prenom_Musicien}} {{Nom_Musicien}}</h2>à {{Prix}}€</span><a class="delete" data-url="{{_url}}"  data-id="{{Code_Morceau}}"></a></div>
       [[/achat]]
       <h2>Total: {{total}}€</h2>
     </div>
