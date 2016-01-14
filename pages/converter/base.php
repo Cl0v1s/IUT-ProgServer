@@ -32,9 +32,13 @@
 				echo $image;
 				return;
 			break;
-			case "audio":
-				//TODO: gérer le cas de l'audio, je ne peux le faire pour le moment, j'ai besoin de voir la tête d'un blob
-				//voir ici: http://stackoverflow.com/questions/4910813/how-to-get-and-play-wav-file-stored-as-mysql-blob
+			case "sound":
+				if($parameters["table"]=="record")
+					$sql = "SELECT Extrait as sound FROM Enregistrement WHERE Enregistrement.Code_Morceau = '".$parameters["id"]."'";
+				$result = $_system_registry->getModel()->query($sql)->fetch();
+				header('Content-Type: audio/mpeg');
+				$sound = pack("H*", $result["sound"]);
+				echo $sound;
 			break;
 		}
 
