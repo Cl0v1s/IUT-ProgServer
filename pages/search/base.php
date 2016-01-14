@@ -16,7 +16,7 @@
     $parameters["name"] = Template::MakeTextSafe($parameters["name"]);
 
     //Déclaration de la requete
-    $sql = "SELECT Musicien.Code_Musicien as Code_Musicien, Musicien.Prénom_Musicien as Prénom_Musicien, Musicien.Nom_Musicien as Nom_Musicien, Musicien.Année_Naissance as Année_Naissance, Musicien.Année_Mort as Année_Mort, Pays.Nom_Pays as Nom_Pays FROM Musicien LEFT JOIN Pays ON Pays.Code_Pays = Musicien.Code_Pays ";
+    $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien, Musicien.Prénom_Musicien as Prénom_Musicien, Musicien.Nom_Musicien as Nom_Musicien, Musicien.Année_Naissance as Année_Naissance, Musicien.Année_Mort as Année_Mort, Pays.Nom_Pays as Nom_Pays FROM Musicien LEFT JOIN Pays ON Pays.Code_Pays = Musicien.Code_Pays ";
     //Analyse de type
     switch($parameters["type"])
     {
@@ -34,7 +34,7 @@
       break;
     }
     //Ajout des paramètres de la recherche
-    $sql = $sql."WHERE Musicien.Prénom_Musicien LIKE '%".$parameters["name"]."%' OR Musicien.Nom_Musicien LIKE '%".$parameters["name"]."%' ORDER BY Musicien.Nom_Musicien ASC";
+    $sql = $sql."WHERE Musicien.Prénom_Musicien LIKE '".$parameters["name"]."%' OR Musicien.Nom_Musicien LIKE '".$parameters["name"]."%' ORDER BY Musicien.Nom_Musicien ASC";
     //Lancement de la requete
     $results = $_system_registry->getModel()->query($sql)->fetchall();
     //Traitements supplémentaires
