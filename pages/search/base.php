@@ -48,6 +48,11 @@
         $results[$i]["pair"] = "pair";
       $results[$i]["Prenom_Musicien"] = $results[$i][utf8_decode("Prénom_Musicien")];
       $results[$i]["Annee_Naissance"] = $results[$i][utf8_decode("Année_Naissance")];
+      // Remplacement des chaines vides par "Inconnu"
+      if($results[$i]["Nom_Musicien"] == "" || !isset($results[$i]["Nom_Musicien"]))
+        $results[$i]["Nom_Musicien"] = "Inconnu";
+      if($results[$i]["Prenom_Musicien"] == "" || !isset($results[$i]["Prenom_Musicien"]))
+        $results[$i]["Prenom_Musicien"] = "Inconnu";
       if($results[$i]["Annee_Naissance"] == "" || !isset($results[$i]["Annee_Naissance"]))
         $results[$i]["Annee_Naissance"] = "Inconnu";
       $results[$i]["Annee_Mort"] = $results[$i][utf8_decode("Année_Mort")];
@@ -55,7 +60,6 @@
         $results[$i]["Annee_Mort"] = "Inconnu";
       if($results[$i]["Nom_Pays"] == "" || !isset($results[$i]["Nom_Pays"]))
         $results[$i]["Nom_Pays"] = "Inconnu";
-
 
     }
     //Ajout des resultats dans les paramètres passés au template
