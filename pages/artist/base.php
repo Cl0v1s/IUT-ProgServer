@@ -12,12 +12,14 @@
         $parameters["code"] = Template::MakeTextSafe($parameters["code"]);
 
         // Récupère toutes les interprétations de l'artiste concerné
-        $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien, Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien ";
-        $sql = $sql."INNER JOIN Interpréter on Interpréter.Code_Musicien = Musicien.Code_Musicien ";
-        $sql = $sql."INNER JOIN Enregistrement on Enregistrement.Code_Morceau = Interpréter.Code_Morceau ";
-        $sql = $sql."INNER JOIN Composer on Composer.Code_Musicien = Musicien.Code_Musicien ";
-        $sql = $sql."INNER JOIN Oeuvre on Oeuvre.Code_Oeuvre = Composer.Code_Oeuvre ";
-        $sql = $sql."WHERE Musicien.Code_Musicien = '".$parameters["code"]."'";
+        $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien,Oeuvre.Code_Oeuvre as Code_Oeuvre, Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien
+        INNER JOIN Interpréter on Interpréter.Code_Musicien = Musicien.Code_Musicien
+        INNER JOIN Enregistrement on Enregistrement.Code_Morceau = Interpréter.Code_Morceau
+        INNER JOIN Composition ON Composition.Code_Composition = Enregistrement.Code_Composition
+        INNER JOIN Composition_Oeuvre ON Composition_Oeuvre.Code_Composition = Composition_Oeuvre.Code_Composition
+        INNER JOIN Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
+        GROUP BY Oeuvre.Code_Oeuvre, Oeuvre.Titre_Oeuvre, Oeuvre.Sous_Titre, Oeuvre.Année, Oeuvre.Opus, Musicien.Code_Musicien
+        HAVING Musicien.Code_Musicien = '".$parameters["code"]."'";
         $results = $_system_registry->getModel()->query($sql)->fetchall();
         for($i = 0; $i != count($results); $i++)
         {
@@ -32,11 +34,14 @@
         $parameters["interpretations"] = $results;
 
         // Récupère toutes les directions de l'artiste concerné
-        $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien, Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien ";
-        $sql = $sql."INNER JOIN Direction on Direction.Code_Musicien = Musicien.Code_Musicien ";
-        $sql = $sql."INNER JOIN Composer on Composer.Code_Musicien = Musicien.Code_Musicien ";
-        $sql = $sql."INNER JOIN Oeuvre on Oeuvre.Code_Oeuvre = Composer.Code_Oeuvre ";
-        $sql = $sql."WHERE Musicien.Code_Musicien = '".$parameters["code"]."'";
+        $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien,Oeuvre.Code_Oeuvre as Code_Oeuvre,  Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien
+        INNER JOIN Direction on Direction.Code_Musicien = Musicien.Code_Musicien
+        INNER JOIN Enregistrement ON Direction.Code_Morceau = Enregistrement.Code_Morceau
+        INNER JOIN Composition ON Composition.Code_Composition = Enregistrement.Code_Composition
+        INNER JOIN Composition_Oeuvre ON Composition_Oeuvre.Code_Composition = Composition_Oeuvre.Code_Composition
+        INNER JOIN Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
+        GROUP BY Oeuvre.Code_Oeuvre, Oeuvre.Titre_Oeuvre, Oeuvre.Sous_Titre, Oeuvre.Année, Oeuvre.Opus, Musicien.Code_Musicien
+        HAVING Musicien.Code_Musicien = '".$parameters["code"]."'";
         $results = $_system_registry->getModel()->query($sql)->fetchall();
         for($i = 0; $i != count($results); $i++)
         {
@@ -51,7 +56,7 @@
         $parameters["directions"] = $results;
 
         // Récupère toutes les oeuvres de l'artiste concerné
-        $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien, Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien ";
+        $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien,Oeuvre.Code_Oeuvre as Code_Oeuvre, Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien ";
         $sql = $sql."INNER JOIN Composer on Composer.Code_Musicien = Musicien.Code_Musicien ";
         $sql = $sql."INNER JOIN Oeuvre on Oeuvre.Code_Oeuvre = Composer.Code_Oeuvre ";
         $sql = $sql."WHERE Musicien.Code_Musicien = '".$parameters["code"]."'";
