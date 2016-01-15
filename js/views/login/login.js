@@ -1,18 +1,15 @@
 $(document).ready(function()
 {
+
   //Supression de l'action lors de l'appui sur la touche entrée
   $('#search form').on('keyup keypress', function(e) {
   var code = e.keyCode || e.which;
-  if (code == 13) { 
+  if (code == 13) {
     e.preventDefault();
     return false;
   }
-	});
-  
-  
-  
-  
-  
+  });
+
   $("input[type=button]").click(function(e)
   {
     $("#name").removeClass("error");
