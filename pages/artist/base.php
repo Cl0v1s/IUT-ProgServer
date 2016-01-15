@@ -11,6 +11,33 @@
         }
         $parameters["code"] = Template::MakeTextSafe($parameters["code"]);
 
+        // Récupère les informations sur l'ariste
+        $results = $_system_registry->getModel()->query("SELECT Musicien.Code_Musicien as Code_Musicien, Musicien.Nom_Musicien as Nom_Musicien, Musicien.Prénom_Musicien as Prenom_Musicien, Musicien.Année_Naissance as Annee_Naissance, Musicien.Année_Mort as Annee_Mort FROM Musicien WHERE Musicien.Code_Musicien = '".$parameters["code"]."'")->fetch();
+        //Si l'artiste n'existe pas dans la base
+        if($results == "")
+        {
+          header("Location: ".$parameters["_url"]."/404");
+          return;
+        }
+        // Remplacement des chaines vides par "Inconnu"
+        if($results["Nom_Musicien"] == "" || !isset($results["Nom_Musicien"]))
+          $results["Nom_Musicien"] = "Inconnu";
+        if($results["Prenom_Musicien"] == "" || !isset($results["Prenom_Musicien"]))
+          $results["Prenom_Musicien"] = "Inconnu";
+        if($results["Annee_Naissance"] == "" || !isset($results["Annee_Naissance"]))
+          $results["Annee_Naissance"] = "Inconnu";
+        if($results["Annee_Mort"] == "" || !isset($results["Annee_Mort"]))
+          $results["Annee_Mort"] = "Inconnu";
+
+        $parameters["Nom_Musicien"] = $results[utf8_decode("Nom_Musicien")];
+        $parameters["Prenom_Musicien"] = $results[utf8_decode("Prenom_Musicien")];
+        $parameters["Annee_Naissance"] = $results["Annee_Naissance"];
+        $parameters["Annee_Mort"] = $results["Annee_Mort"];
+        $parameters["Photo"] = $parameters["_url"]."/converter/picture/artist/".$results["Code_Musicien"];
+
+
+
+
         // Récupère toutes les interprétations de l'artiste concerné
         $sql = "SELECT DISTINCT Musicien.Code_Musicien as Code_Musicien,Oeuvre.Code_Oeuvre as Code_Oeuvre, Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee, Oeuvre.Opus as Opus FROM Musicien
         INNER JOIN Interpréter on Interpréter.Code_Musicien = Musicien.Code_Musicien
@@ -73,23 +100,7 @@
         }
         $parameters["oeuvres"] = $results;
 
-        // Récupère les informations sur l'ariste
-        $results = $_system_registry->getModel()->query("SELECT Musicien.Code_Musicien as Code_Musicien, Musicien.Nom_Musicien as Nom_Musicien, Musicien.Prénom_Musicien as Prenom_Musicien, Musicien.Année_Naissance as Annee_Naissance, Musicien.Année_Mort as Annee_Mort FROM Musicien WHERE Musicien.Code_Musicien = '".$parameters["code"]."'")->fetch();
-        // Remplacement des chaines vides par "Inconnu"
-        if($results["Nom_Musicien"] == "" || !isset($results["Nom_Musicien"]))
-          $results["Nom_Musicien"] = "Inconnu";
-        if($results["Prenom_Musicien"] == "" || !isset($results["Prenom_Musicien"]))
-          $results["Prenom_Musicien"] = "Inconnu";
-        if($results["Annee_Naissance"] == "" || !isset($results["Annee_Naissance"]))
-          $results["Annee_Naissance"] = "Inconnu";
-        if($results["Annee_Mort"] == "" || !isset($results["Annee_Mort"]))
-          $results["Annee_Mort"] = "Inconnu";
 
-        $parameters["Nom_Musicien"] = $results[utf8_decode("Nom_Musicien")];
-        $parameters["Prenom_Musicien"] = $results[utf8_decode("Prenom_Musicien")];
-        $parameters["Annee_Naissance"] = $results["Annee_Naissance"];
-        $parameters["Annee_Mort"] = $results["Annee_Mort"];
-        $parameters["Photo"] = $parameters["_url"]."/converter/picture/artist/".$results["Code_Musicien"];
 
         template("views/artist/base.tpl", $parameters, "views/base.tpl");
     };

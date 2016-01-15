@@ -10,6 +10,17 @@
             return;
         }
         $parameters["code"] = Template::MakeTextSafe($parameters["code"]);
+        // Récupère les informations sur l'oeuvre
+        $results = $_system_registry->getModel()->query("SELECT Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee FROM Oeuvre WHERE Oeuvre.Code_Oeuvre = '".$parameters["code"]."'")->fetch();
+        //Si l'oeuvre n'existe pas dans la base
+        if($results == "")
+        {
+          header("Location: ".$parameters["_url"]."/404");
+          return;
+        }
+        $parameters["Titre_Oeuvre"] = $results["Titre_Oeuvre"];
+        $parameters["Sous_Titre"] = $results["Sous_Titre"];
+        $parameters["Annee"] = $results["Annee"];
         // Récupère toutes les albums dans lesquels l'oeuvre est présente
         $sql = "SELECT DISTINCT Album.Code_Album as Code_Album, Album.Titre_Album as Titre_Album, Album.Année_Album as Annee_Album, Album.ASIN as ASIN FROM Album
         INNER JOIN Disque ON Album.Code_Album = Disque.Code_Album
@@ -28,11 +39,7 @@
           $results[$i]["Pochette"] = $parameters["_url"]."/converter/picture/album/".$results[$i]["Code_Album"];
         }
         $parameters["albums"] = $results;
-        // Récupère les informations sur l'oeuvre
-        $results = $_system_registry->getModel()->query("SELECT Oeuvre.Titre_Oeuvre as Titre_Oeuvre, Oeuvre.Sous_Titre as Sous_Titre, Oeuvre.Année as Annee FROM Oeuvre WHERE Oeuvre.Code_Oeuvre = '".$parameters["code"]."'")->fetch();
-        $parameters["Titre_Oeuvre"] = $results["Titre_Oeuvre"];
-        $parameters["Sous_Titre"] = $results["Sous_Titre"];
-        $parameters["Annee"] = $results["Annee"];
+
         template("views/artwork/base.tpl", $parameters, "views/base.tpl");
     };
     $_system_registry->registerPage("artwork", "/code", $artwork);
