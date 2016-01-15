@@ -11,7 +11,7 @@
 	</div>
 	<div class="list">
 		[[records]]
-			<div class="entry {{pair}}"><h1>{{Titre}}</h1><span>{{Duree}} pour {{Prix}}€</span><audio src="{{Extrait}}" controls></audio><a class="button" data-url="{{_url}}" data-code="{{Code_Morceau}}">Ajouter au panier</a></div>
+			<div class="entry {{pair}}"><h1>{{Titre}}</h1><span>{{Duree}} pour {{Prix}}€</span><audio src="{{Extrait}}" controls></audio><form action="{{_url}}/profil/add" method="post"><input type="hidden" value="{{_url}}/{{_current_page}}/{{Code_Album}}" name="callback"><input type="hidden" name="id" value="{{Code_Morceau}}"><center><input type="submit" value="Ajouter au panier"></center></form></div>
 		[[/records]]
 	</div>
 </div>

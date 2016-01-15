@@ -9,7 +9,7 @@
     <div class="list">
               <!--TODO: AJouter un lien vers la page de l'enregistrement-->
       [[achat]]
-        <div class="entry {{pair}}"><span><h2>{{Titre}} de {{Prenom_Musicien}} {{Nom_Musicien}}</h2>à {{Prix}}€</span><a class="delete" data-url="{{_url}}"  data-id="{{Code_Morceau}}"></a></div>
+        <div class="entry {{pair}}"><span><h2>{{Titre}} {{Prenom_Musicien}} {{Nom_Musicien}}</h2>à {{Prix}}€</span><audio src="{{Extrait}}" controls></audio><form action="{{_url}}/profil/delete" method="post"><input type="hidden" name="id" value="{{Code_Morceau}}"><center><input type="submit" value="Supprimer du panier"></center></form></a></div>
       [[/achat]]
       <h2>Total: {{total}}€</h2>
     </div>

@@ -24,6 +24,7 @@
         $parameters["records"] = $results;
         $results = $_system_registry->getModel()->query("SELECT Album.Code_Album as Code_Album, Album.Titre_Album as Titre_Album, Album.Année_Album as Annee_Album, Album.ASIN as ASIN FROM ALBUM WHERE Album.Code_Album = '".$parameters["code"]."'")->fetch();
         // Récupère les informations relatives à l'album
+        $parameters["Code_Album"] = $results["Code_Album"];
         $parameters["Titre_Album"] = $results["Titre_Album"];
         $parameters["Annee_Album"] = $results["Annee_Album"];
         $parameters["Pochette"] = $parameters["_url"]."/converter/picture/album/".$results["Code_Album"];

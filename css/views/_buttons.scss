@@ -129,7 +129,7 @@ input[type=text].error, input[type=password].error, select.error
 
 
 //Boutons
-input[type="button"]
+input[type="button"],input[type="submit"]
 {
   border: $color-contrast 1px solid;
   font-family: $font-base;
@@ -140,7 +140,7 @@ input[type="button"]
   height: 20px;
 }
 
-input[type=button]:hover
+input[type=button]:hover,input[type="submit"]:hover
 {
   border: $color-link 1px solid;
 }
