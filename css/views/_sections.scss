@@ -87,9 +87,18 @@ div.list
     position: relative;
     font-family: $font-base;
 
+    h1
+    {
+      color: $color-contrast;
+    }
+
     &.pair
     {
       background-color: $color-contrast;
+      h1
+      {
+        color: $color-base;
+      }
     }
   }
 }

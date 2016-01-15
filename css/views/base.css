@@ -177,8 +177,14 @@ div.list div.entry {
   position: relative;
   font-family: Arial, sans-serif; }
   /* line 90, _sections.scss */
+  div.list div.entry h1 {
+    color: #607d8b; }
+  /* line 95, _sections.scss */
   div.list div.entry.pair {
     background-color: #607d8b; }
+    /* line 98, _sections.scss */
+    div.list div.entry.pair h1 {
+      color: #455a64; }
 
 /* line 4, base.scss */
 body {
