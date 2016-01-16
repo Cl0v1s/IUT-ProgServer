@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="{{_url}}/css/views/album/base.css">
 <script src="{{_url}}/js/views/album/base.js"></script>
 <div>
+	<br><br>
+	<center><h1>Description et liste des morceaux d'un Album</h1></center><br>
 	<div id="album">
 		<img src="{{Pochette}}">
 		<div>

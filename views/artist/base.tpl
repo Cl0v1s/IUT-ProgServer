@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="{{_url}}/css/views/artist/base.css">
 <div>
+  <h1>Description et Oeuvre d'un artiste</h1><br>
   <div id="bio">
     <img src="{{Photo}}">
     <div>

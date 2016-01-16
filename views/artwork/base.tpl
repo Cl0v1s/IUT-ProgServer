@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{_url}}/css/views/artwork/base.css">
 <div>
+  <br><br>
+  <center><h1>Description d'une Oeuvre et liste des albums la contenant</h1></center><br>
   <div id="artwork">
     <h1>{{Titre_Oeuvre}}</h1>
     <h2>{{Sous_Titre}}</h2>

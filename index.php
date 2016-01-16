@@ -23,6 +23,7 @@
   include_once "pages/error/base.php";
   include_once "pages/album/base.php";
   include_once "pages/artist/base.php";
+  include_once "pages/about/base.php";
   include_once "pages/artwork/base.php";
   include_once "pages/converter/base.php";
   ////////////////////////////////////////////////////////////////////////////////

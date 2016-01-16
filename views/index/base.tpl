@@ -22,7 +22,7 @@
         Ce site permet d'effectuer des recherches sur différents musiciens répertoriés dans la base de données hébergée au sein du département informatique de l'IUT de Bordeaux.<br><br>
         Il a été réalisé dans le cadre du projet de programmation web coté serveur.<br><br>
         Il a été développé par <a href="https://twitter.com/raftilu">@Rafael Lagoinha</a> et <a href="https://twitter.com/cp0rtron">@Clovis Portron</a>.
-        <a href="{{_url}}/pages/about/base.php">En savoir plus.</a>
+        <center><a href="{{_url}}/about">En savoir plus.</a></center>
       </p>
     </span>
   </div>
