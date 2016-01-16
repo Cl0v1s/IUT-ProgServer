@@ -56,7 +56,7 @@ class Session
 
     if($_system_registry->getModel() == NULL)
       return false;//Quand on a pas de model, on retourne toujours vrai pour faciliter les tests
-    $users = $_system_registry->getModel()->query("SELECT Code_Abonné, Login, Password FROM Abonné")->fetchall();
+    $users = $_system_registry->getModel()->query("SELECT Code_Abonné as Code_Abonne, Login, Password FROM Abonné")->fetchall();
 
     for($i = 0; $i <count($users); $i++)
     {
