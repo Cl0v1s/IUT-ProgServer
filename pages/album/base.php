@@ -1,8 +1,10 @@
 <?php
 
+    include_once("aws_signed_request.php");
     $album = function($parameters)
     {
         global $_system_registry;
+        include_once("api.php");
         if(!isset($parameters["code"]) || $parameters["code"]=="")
         {
             header("Location: ".$parameters["_url"]."/404");
@@ -24,6 +26,24 @@
         $parameters["Pochette"] = $parameters["_url"]."/converter/picture/album/".$results["Code_Album"];
         $parameters["ASIN"] = $results["ASIN"];
 
+        //Récupération des informations amazon
+        $details = file_get_contents(aws_signed_request("fr", array("Operation"=>"ItemLookup",
+                        "ItemId"=>$parameters["ASIN"], "ResponseGroup"=>"Small"), $public, $secret, "musique04c-21"));
+        $details = simplexml_load_string($details);
+        $parameters["Amazon_Title"] = (string)$details->Items->Item->ItemAttributes->Title;
+        $parameters["Amazon_Group"] = (string)$details->Items->Item->ItemAttributes->ProductGroup;
+        $parameters["Amazon_Manu"] = (string)$details->Items->Item->ItemAttributes->Manufacturer;
+        $parameters["Amazon_Creators"] = array();
+        foreach ($details->Items->Item->ItemAttributes->Creator as $node) {
+          $data = array();
+          $data["role"] = $node->attributes()[0];
+          $data["name"] = $node;
+          array_push($parameters["Amazon_Creators"], $data);
+        };
+        $details = file_get_contents(aws_signed_request("fr", array("Operation"=>"ItemLookup",
+                        "ItemId"=>$parameters["ASIN"], "ResponseGroup"=>"OfferSummary"), $public, $secret, "musique04c-21"));
+        $details = simplexml_load_string($details);
+        $parameters["Amazon_Price"] = (string)$details->Items->Item->OfferSummary->LowestUsedPrice->FormattedPrice;
 
         // Récupère toutes les enregistrement de l'album concerné
         $sql = "SELECT DISTINCT Album.Code_Album as Code_Album, Enregistrement.Code_Morceau as Code_Morceau, Enregistrement.Titre as Titre, Enregistrement.Durée as Duree, Enregistrement.Prix as Prix FROM Album ";
