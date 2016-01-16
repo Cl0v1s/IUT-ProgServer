@@ -9,13 +9,16 @@
           $item_id = Template::MakeTextSafe($_POST["id"]);
           //Modification du panier
           $basket = Session::getEntry("basket");
-          $i = 0;
-          while($i != count($basket) && $basket[$i] != $item_id)
-            $i ++;
-          if($i != count($basket))
-            array_splice($basket, $i, 1);
-          //Enregistrement du nouveau panier
-          Session::replaceEntry("basket", $basket);
+          if($basket != false)
+          {
+            $i = 0;
+            while($i != count($basket) && $basket[$i] != $item_id)
+              $i ++;
+            if($i != count($basket))
+              array_splice($basket, $i, 1);
+            //Enregistrement du nouveau panier
+            Session::replaceEntry("basket", $basket);
+          }
         }
         else if(isset($parameters["action"]) && $parameters["action"] == "add" && isset($_POST["id"]) && isset($_POST["callback"])) //Si l'action est d'ajouter un element au panier
         {
@@ -24,6 +27,8 @@
           $parameters["added"] = false;
           //Modification du panier
           $basket = Session::getEntry("basket");
+          if($basket == false)
+            $basket = array();
           if(!in_array($item_id,$basket))
           {
             array_push($basket, $item_id);
@@ -31,6 +36,31 @@
             Session::replaceEntry("basket", $basket);
           }
           template("views/profil/add.tpl", $parameters, "views/base.tpl");
+          return;
+        }
+        else if(isset($parameters["action"]) && $parameters["action"] == "buy")
+        {
+          $parameters["yes"] = false;
+          $basket = Session::getEntry("basket");
+          if($basket != false)
+          {
+            //Récupération du numéro abonné de l'user connecté
+            $user = Session::getLoggedAccount()["Code_Abonne"];
+            //Récupération des enregistrements "réels", on n'ajoute pas à achat d'eventuelles erreurs
+            $list = "'".implode("','", $basket)."'";
+            $sql = "SELECT Enregistrement.Code_Morceau as Code_Morceau
+                FROM Enregistrement
+                WHERE Enregistrement.Code_Morceau IN (".$list.")";
+            $results = $_system_registry->getModel()->query($sql)->fetchall();
+            for($i = 0; $i != count($results); $i++)
+            {
+              $parameters["yes"] = true;
+              $sql = "INSERT INTO Achat(Code_Enregistrement, Code_Abonné) VALUES ('".$results[$i]["Code_Morceau"]."', '".$user."')";
+              $result = $_system_registry->getModel()->exec($sql);
+            }
+            Session::replaceEntry("basket", false);
+          }
+          template("views/profil/buy.tpl", $parameters, "views/base.tpl");
           return;
         }
 
